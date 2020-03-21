@@ -1,0 +1,71 @@
+    <html>
+    <head>
+        <title>Login and Registration Form - Easy Tutorials</title>
+        <link rel="stylesheet" href="axel.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div class = "hero">
+    <div class = "form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type = "button" class = "toggle-btn" onclick = "login()">Log In</button>
+            <button type = "button" class = "toggle-btn" onclick = "register()">Register</button>
+        </div> 
+         <div class = "user-type">
+            <select id="user-type" required>
+                <option value="" disabled selected hidden>User Type</option>
+                <option value="Start-Up">Start Up</option>
+                <option value="Mentor">Mentor</option>
+                <option value="Guest">Guest</option>
+            </select>
+        </div>
+        <form id = "login" class = "input-group" >
+            <input type = "text" class = "input-field" placeholder="User Id" required>
+            <div class = "password" style = "display">
+               <input type = "password" class = "input-field" placeholder="Enter Password" required>
+                <span id = "eye" toggle = "#password-field"  class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+            <input type = "checkbox" class =  "check-box"><span>Remember Password </span>
+            <button type = "submit" class = "submit-btn">Log in </button>
+        </form>
+        <form id = "register" class = "input-group">
+            <input type = "text" class = "input-field" placeholder="User Id" required>
+             <input type = "email" class = "input-field" placeholder="Email Id" required>
+            <input type = "text" class = "input-field" placeholder="Enter Password" required>
+            <span id = "eye" toggle = "#password-field"  class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            <input type = "checkbox" class =  "check-box"><span>I agree to the terms & conditions  </span>
+            <button type = "submit" class = "submit-btn">Register </button>
+        </form>
+    </div> 
+    </div>
+        <script>
+        var x = document.getElementById("login"); 
+        var y = document.getElementById("register"); 
+        var z = document.getElementById("btn");
+
+        function register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+        
+        $(".toggle-password").click(function() {
+          $(this).toggleClass("fa-eye fa-eye-slash");
+          var input = $($(this).attr("toggle"));
+          if (input.attr("type") == "password") {
+            input.attr("type", "text");
+          } else {
+            input.attr("type", "password");
+          }
+        });
+    
+    </script>
+    </body>
+    </html>
